@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headache Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-sm-8 col-10">
+                <form>
+                    <h2 class="text-center mb-4">Headache Quiz</h2>
+                    <div class="form-group">
+                        <label for="question">Question:</label>
+                        <p id="question">What can be a common cause of headaches?</p>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="answer" id="option1" value="Stress">
+                        <label class="form-check-label" for="option1">
+                            Stress
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="answer" id="option2" value="Dehydration">
+                        <label class="form-check-label" for="option2">
+                            Dehydration
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="answer" id="option3" value="Lack of Sleep">
+                        <label class="form-check-label" for="option3">
+                            Lack of Sleep
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="answer" id="option4" value="All of the above">
+                        <label class="form-check-label" for="option4">
+                            All of the above
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-block" onclick="submitAnswer()">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        function submitAnswer() {
+            var selectedOption = document.querySelector('input[name="answer"]:checked');
+
+            if (selectedOption) {
+                var selectedValue = selectedOption.value;
+
+                if (selectedValue === "Stress") {
+                    window.location.href = "stress_quiz.html"; // Redirect to stress quiz
+                } else {
+                    alert("Invalid option selected.");
+                }
+            } else {
+                alert("Please select an option.");
+            }
+        }
+    </script>
+</body>
+
+</html>
